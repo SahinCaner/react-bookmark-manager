@@ -1,0 +1,29 @@
+html,
+body,
+#app,
+.wrapper {
+  height: 100%;
+  min-height: 100%;
+}
+.wrapper {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: calc(100% - 1.6rem);
+  max-width: 90rem;
+}
+
+.container--small {
+  max-width: 75rem;
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}

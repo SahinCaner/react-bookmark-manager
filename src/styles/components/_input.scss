@@ -1,0 +1,109 @@
+.form__input {
+  flex: 1 1 100%;
+  height: 38px;
+  width: 100%;
+  padding: 0 1.5rem;
+  background-color: transparent;
+  border: 1px solid darken($border-color, 7%);
+  border-radius: 0;
+  box-shadow: none;
+  border-radius: 19px;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -webkit-appearance: none; /* to remove mobile safari boxshadow */
+  font-size: 1.4rem;
+  color: $heading1-color;
+  background-color: #fff;
+}
+.form__input--noborder {
+  height: 38px;
+  border: 0;
+}
+.form__input:focus {
+  border-color: lighten($funky-blue, 20%);
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035), 0 0 8px lighten($funky-blue, 30%);
+}
+select.form__input {
+  position: relative;
+  z-index: 1;
+  border-radius: 1.9rem;
+  appearance: none;
+  background-color: #fff;
+  padding-right: 5rem;
+}
+select.form__input:focus {
+  outline: rgba(0, 0, 0, 0);
+}
+textarea.form__input {
+  padding: 6px 10px;
+  height: 34px;
+  width: 100% !important;
+  margin: 0 !important;
+  display: flex;
+}
+.form__input[readonly] {
+  color: #727272;
+  background-color: #f5f5f5;
+}
+.select__wrapper {
+  position: relative;
+  flex: 1;
+}
+.select__wrapper:before {
+  position: absolute;
+  right: 2rem;
+  top: .9rem;
+  width: 1.6rem;
+  height: 1.8rem;
+  content: "\f078";
+  font-family: "Fontawesome";
+  color: $font2-color;
+  z-index: 2;
+  pointer-events: none;
+}
+
+label {
+  display: inline-block;
+  padding-left: 1.5rem;
+  font-size: 12px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.15rem;
+  color: $heading2-color;
+}
+
+.microcopy {
+  margin-top: .7rem;
+  padding-left: 1.5rem;
+  font-size: 1.2rem;
+  color: $font3-color;
+}
+
+.microcopy--error {
+  color: $error-color;
+}
+
+.input__group--error .form__input:focus {
+  border-color: lighten($error-color, 20%);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035), 0 0 8px lighten($error-color, 15%);
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: lighten($font3-color, 10%);
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: lighten($font3-color, 10%);
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: lighten($font3-color, 10%);
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: lighten($font3-color, 10%);
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}

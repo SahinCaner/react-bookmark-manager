@@ -1,0 +1,64 @@
+ul.bookmark__list {
+  font-size: 1.4rem;
+}
+ul.bookmark__list li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+ul.bookmark__list li ~ li {
+  border-top: 0.1rem solid $border-color;
+}
+ul.bookmark__list .bookmark a {
+  display: flex;
+  align-items: center;
+}
+
+ul.bookmark__list .bookmark__link {
+  padding-left: 1.6rem;
+}
+ul.bookmark__list .bookmark--link a {
+  color: $heading2-color;
+}
+
+ul.bookmark__list .bookmark--link a:hover {
+  color: #0c0d0d;
+}
+
+ul.bookmark__list .bookmark--update {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+ul.bookmark__list .bookmark--update a {
+  color: $font3-color;
+}
+ul.bookmark__list .bookmark--update a:hover {
+  color: darken($funky-blue, 10%);
+}
+
+ul.bookmark__list .bookmark__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  border: 0.1rem solid $border-color;
+  border-radius: 50%;
+  background-color: $input-background-color;
+}
+ul.bookmark__list li img {
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 50%;
+}
+
+h3.bookmark__list__header {
+  font-size: 1.8rem;
+  color: $font2-color;
+  margin-bottom: 1.5rem;
+}

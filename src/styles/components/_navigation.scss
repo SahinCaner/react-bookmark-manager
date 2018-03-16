@@ -1,0 +1,131 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.navigation__item {
+  display: flex;
+}
+.navigation__item--header {
+  align-items: center;
+  justify-content: space-between;
+  height: 6rem;
+  padding: 0 1.6rem;
+}
+.navigation__item--body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  transform: translate3d(100%, 0, 0);
+  transition: all 225ms cubic-bezier(0, 0, 0.2, 1);
+  background-color: #fff;
+}
+.navigation__logo a {
+  color: $funky-red;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  letter-spacing: -0.05rem;
+  font-size: 2.1rem;
+  font-weight: bold;
+}
+
+ul.nav__menu {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 6rem);
+  padding: 2.5rem 2rem 2rem;
+  font-size: 1.4rem;
+}
+ul.nav__menu > li.space {
+  flex: 1;
+}
+ul.nav__menu > li a {
+  color: $font3-color;
+}
+ul.nav__menu > li a:hover {
+  color: $font1-color;
+}
+ul.nav__menu > li a.selected {
+  color: $funky-green;
+}
+ul.nav__menu > li > h2 {
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+}
+ul.nav__menu > li > h2 a {
+  font-family: "Lato", sans-serif;
+  color: $heading2-color;
+}
+ul.nav__menu > li > h2 a.selected {
+  color: $funky-green;
+}
+
+ul.nav__menu > li > ul li ~ li {
+  margin-top: 1.5rem;
+}
+ul.nav__menu > li ~ li {
+  margin-top: 3rem;
+}
+ul.sub__nav__menu {
+  margin-top: 2rem;
+}
+
+// Mobile Menu
+.is-active .navigation__item--body {
+  transform: translate3d(0, 0, 0);
+}
+
+.mobile__menu__header {
+  height: 6rem;
+  padding: 0 2rem;
+  line-height: 6rem;
+  border-bottom: 0.1rem solid $border-color;
+  cursor: pointer;
+}
+.mobile__menu__header:hover .btn {
+  color: darken($funky-green, 20%);
+}
+
+.navigation ul.button__list {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.navigation ul.button__list li ~ li {
+  margin: 2rem 0 0;
+}
+
+@media (min-width: 768px) {
+  .navigation__item--body {
+    position: relative;
+    transform: translate3d(0, 0, 0);
+  }
+  .navigation {
+    max-width: 25rem;
+    border-right: 0.1rem solid $border-color;
+  }
+  .navigation__item {
+    padding: 0 3rem;
+  }
+
+  ul.nav__menu {
+    padding: 3rem 0;
+  }
+  .mobile__menu__header,
+  .navigation__mobile__menu {
+    display: none;
+  }
+  .navigation ul.button__list li,
+  .navigation ul.button__list li a {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}

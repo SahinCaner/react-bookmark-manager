@@ -1,0 +1,89 @@
+// GENERAL RULES
+.box {
+  width: 100%;
+  border: 1px solid $border-color;
+}
+
+.box__item--buttons {
+  padding-top: 0 !important;
+}
+
+// BOX ITEM GENERAL RULES
+.box--transparent .box__item {
+  padding: $m-padding 0;
+}
+
+.box__item {
+  padding: $m-padding;
+}
+
+.box__item-position {
+  display: flex;
+  flex: 1;
+}
+
+.box__item-position--center {
+  justify-content: center;
+}
+
+.box__item-position--right {
+  justify-content: flex-end;
+}
+
+// BOX ITEM HEADER RULES
+.box__item--header {
+  display: flex;
+  align-items: flex-start;
+  padding: $m-padding $m-padding 0;
+  white-space: normal;
+}
+
+/* If only there is heading */
+
+.box__item--header:last-child {
+  padding: $m-padding;
+}
+
+.box__item--header h1 {
+  font-size: $heading-1;
+  color: $heading1-color;
+}
+
+.box__item--header p {
+  margin: 2rem 0 0;
+  font-size: 1.4rem;
+  color: $font1-color;
+  line-height: 2rem;
+}
+
+.box__header__item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 36px;
+}
+
+.box__header__item--action {
+  flex-direction: row;
+  flex: 0;
+  justify-content: flex-end;
+  margin-left: 3rem;
+}
+
+// BOX BODY RULES
+@media (min-width: 768px) {
+  .box {
+    border: none;
+  }
+}
+@media (min-width: 992px) {
+  .box__item,
+  .box__item--header:last-child {
+    padding: 3.2rem;
+  }
+  .box__item--header {
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 1200px) {
+}

@@ -1,0 +1,75 @@
+button:focus,
+input[type="submit"] {
+  outline: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  border-radius: $button-border-radius;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 0.13rem;
+}
+.btn i {
+  font-size: 1.6rem;
+}
+.btn--primary {
+  color: #fff;
+  background-color: $funky-green;
+  @include hover {
+    background-color: darken($funky-green, 10%);
+    border-color: transparent;
+    color: #fff;
+  }
+}
+
+.btn--secondary {
+  color: $funky-green;
+  background-color: transparent;
+  border-color: $funky-green;
+  @include hover {
+    background-color: darken($funky-green, 10%);
+    border-color: transparent;
+    color: #fff;
+  }
+}
+
+.btn--important {
+  color: #fff;
+  background-color: $funky-red;
+  @include hover {
+    background-color: darken($funky-red, 10%);
+    border-color: transparent;
+    color: #fff;
+  }
+}
+
+
+.btn--link {
+  color: $funky-green;
+  background-color: transparent;
+  @include hover {
+    color: darken($funky-green, 20%);
+    border-color: transparent;
+  }
+}
+
+.btn--justlink {
+  padding-right: 0;
+  padding-left: 0;
+}
+.btn--mobile {
+  padding: 0.6rem 0;
+}

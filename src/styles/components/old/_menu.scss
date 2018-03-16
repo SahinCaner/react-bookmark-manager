@@ -1,0 +1,125 @@
+ul.menu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+ul.menu li {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  min-height: 40px;
+}
+
+ul.menu li a {
+  display: flex;
+  flex: 1 1 100%;
+  align-items: center;
+  height: 40px;
+  padding: 0 10px 0 17px;
+  color: rgba(149, 170, 176, 1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul.menu li a span.text {
+  flex-grow: 1;
+}
+
+ul.menu li a span.icon {
+  font-size: 18px;
+  width: 35px;
+}
+
+ul.menu li a span.icon i:before {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+
+ul.menu li a span.notification__count {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 2px;
+  background-color: rgba(112, 184, 93, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+ul.menu li a span.sub__menu__icon {
+  font-size: 11px;
+}
+
+ul.menu li a span.sub__menu__icon i {
+  transition: all 220ms cubic-bezier(0.25, 0.25, 0, 1);
+}
+
+ul.menu li a:hover {
+  background-color: #2c383c;
+  color: rgba(255, 255, 255, 1);
+}
+
+ul.menu>li>a.active {
+  background-color: rgba(58, 75, 79, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+ul.menu li.flex-grow {
+  flex-grow: 1;
+  min-height: 0;
+}
+
+ul.menu li ul {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  background-color: rgba(14, 19, 20, 1);
+}
+
+ul.menu li ul li a {
+  padding-left: 55px;
+}
+
+ul.menu li ul li a:hover {
+  background-color: rgba(28, 38, 40, 1);
+}
+
+ul.menu li.parent__menu ul {
+  height: 0;
+  overflow: hidden;
+}
+
+ul.menu li.parent__menu--is-visible ul {
+  height: auto;
+}
+
+ul.menu li.parent__menu--is-visible .sub__menu__icon i {
+  transform: rotate(-90deg);
+}
+
+ul.menu ul.sub__menu a.active {
+  background-color: rgba(28, 38, 40, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+@media (min-width: 768px) {
+  ul.menu li a {
+    padding-left: 10px;
+  }
+}
+
+@media (min-height: 500px) {
+  ul.menu {
+    position: absolute;
+    top: 61px;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}

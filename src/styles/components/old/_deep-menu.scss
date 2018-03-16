@@ -1,0 +1,27 @@
+/* Deep menu */
+ul.deep__menu { position: relative; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; background-color: #f5f5f5; }
+ul.deep__menu li { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex: 1 1 50%; -ms-flex: 1 1 50%; flex: 1 1 50%; max-width: 50%; border-right: 1px solid #dadada; }
+ul.deep__menu li a { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-flex: 1; -ms-flex: 1; flex: 1; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: flex-start; -ms-flex-pack: start; justify-content: flex-start; text-align: center; padding: 20px; background-color: #fff; color: #212121; transition: all 220ms cubic-bezier(0.25,0.25,0,1); }
+ul.deep__menu li a:hover { background-color: #ecf0f1; }
+ul.deep__menu li a i { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; font-size: 30px; height: 30px; width: 30px; color: #727272; }
+ul.deep__menu li a p { margin: 10px 0 0; }
+ul.deep__menu li:nth-child(2n) { border-right: 0; }
+ul.deep__menu li:nth-child(n):before { position: absolute; left: 0; content: ''; width: 100%; height: 1px; background-color: #dadada; }
+ul.deep__menu li .deep__menu__item--icon img { width: 50px; height: 50px; height: auto; display: block; }
+
+// For 2 columns deep menus
+.flex__container--column .flex__section__item--main .card__item--deepmenu { padding: 0; }
+.flex__container--column .flex__section__item--main .card__item--deepmenu ul.deep__menu li:nth-child(-n+4):before { background-color: transparent; }
+
+
+@media (min-width: 768px) {}
+@media (min-width: 992px) {
+  /* Deep menu */
+ul.deep__menu li { -webkit-flex: 1 1 25%; -ms-flex: 1 1 25%; flex: 1 1 25%; max-width: 25%; }
+ul.deep__menu li a { padding: 30px; }
+ul.deep__menu li:nth-child(2n) { border-right: 1px solid #dadada; }
+ul.deep__menu li:nth-child(4n) { border-right: 0; }
+
+ul.deep__menu li .deep__menu__item--icon img { width: 60px; height: 60px; }
+}
+@media (min-width: 1200px) {}

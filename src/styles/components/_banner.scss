@@ -1,0 +1,34 @@
+.banner {
+}
+.banner__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.banner__item h3 {
+  font-size: 2rem;
+  letter-spacing: -0.04rem;
+}
+.banner__item--message p {
+  margin-top: 1rem;
+  color: $font2-color;
+}
+.banner__item--image p {
+  margin: 0;
+  font-size: 500%;
+}
+
+.banner__item ~ .banner__item {
+  margin-top: 2.5rem;
+}
+.banner__item--button {
+  margin-top: 4rem;
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}

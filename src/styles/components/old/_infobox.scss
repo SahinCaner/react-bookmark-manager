@@ -1,0 +1,7 @@
+.infobox { display: -webkit-flex; display: -ms-flexbox; display: flex; }
+.infobox__item { padding-left: 15px; color: #727272; word-break: break-all; }
+.infobox__item--header { -webkit-flex: 0 0 150px; -ms-flex: 0 0 150px; flex: 0 0 150px; padding-left: 0; color: #212121; font-weight: bold; }
+
+@media (min-width: 768px) {}
+@media (min-width: 992px) {}
+@media (min-width: 1200px) {}

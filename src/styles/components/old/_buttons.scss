@@ -1,0 +1,91 @@
+/* Button */
+.button { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; position: relative; height: 36px; padding: 6px 12px; background-color: transparent; box-shadow: none; font-size: 14px; font-weight: bold; font-family: "Trebuchet MS", "Helvetica"; color: #212121; text-decoration: none !important; border: 2px solid transparent; transition: all 220ms cubic-bezier(0.25,0.25,0,1); white-space: nowrap; cursor: pointer; }
+.button--default { border: 2px solid #dadada; }
+.button--link { color: #70b85d; }
+.button--primary { background-color: #70b85d; border-color: #70b85d; color: #fff; }
+.button--secondary { border-color: #70b85d; }
+.button--warning { background-color: #000; border-color: #000; color: #fff; }
+.button--small { height: 28px; padding: 5px; font-size: 12px; }
+.button ~ .button { margin-left: 8px; }
+.button span { white-space: nowrap; }
+
+/* Hover State */
+.button:hover { color: #212121; }
+.button--default:hover, .button--default:focus { border-color: #212121; }
+.button--default:focus { color: #212121; }
+.button--primary:hover, .button--primary:focus { background-color: #519140; color: #fff; }
+.button--secondary:hover, .button--secondary:focus { background-color: #ecf0f1; border-color: #519140; }
+.button--secondary:focus { color: #212121; }
+.button--warning:hover, .button--warning:focus { background-color: #2a2a2a; color: #fff; }
+.button .fa { width: 1em; margin-right: 6px; }
+
+
+
+.button--animation-run:hover { cursor: default; }
+span.button__animation__icon { position: absolute; opacity: 0; width: 100%; height: 100%; left: 0; top: 0; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; transition: all 220ms cubic-bezier(0.25,0.25,0,1); }
+span.button__animation__icon i { font-size: 20px !important; color: #70b85d !important; margin: 0 !important; }
+.button--primary > span.button__animation__icon i { color: #fff !important; }
+.button--warning > span.button__animation__icon i { color: #fff !important; }
+.button--default > span.button__animation__icon i { color: #212121 !important; }
+.button--secondary > span.button__animation__icon i { color: #212121 !important; }
+.button--link > span.button__animation__icon i { color: #212121 !important; }
+
+.button--animation-run.button--primary { background-color: #519140 !important; color: #fff !important; }
+.button--animation-run.button--secondary { background-color: #ecf0f1 !important; border-color: #519140 !important; }
+.button--animation-run.button--default { border-color: #212121 !important; }
+.button--animation-run.button--link i { color: #212121 !important; }
+.button--animation-run.button--warning { background-color: #2a2a2a !important; color: #fff !important; }
+
+.button--animation-run {}
+.button--animation-run > span { opacity: 0; }
+.button--animation-run > i { opacity: 0; }
+.button--animation-run > span.button__animation__icon { opacity: 1; z-index: 10; }
+.button--animation-run > span.button__animation__icon i { -webkit-animation: loadingIcon 0.4s infinite linear; animation: loadingIcon 0.4s infinite linear; }
+
+
+@-webkit-keyframes loadingIcon {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+
+@keyframes loadingIcon {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+
+.button__icon { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; height: 32px; width: 32px; line-height: 28px; text-align: center; color: #212121; background-color: transparent; border-radius: 50%; box-shadow: none; border: 2px solid #dadada; text-decoration: none !important; cursor: pointer; transition: all 220ms cubic-bezier(0.25,0.25,0,1); }
+.button__icon--default { border: 2px solid #dadada; }
+.button__icon--link { border-color: transparent; color: #70b85d; }
+.button__icon--link-secondary { border-color: transparent;  color: #727272; width: 20px; }
+.button__icon--secondary { border-color: #70b85d; }
+.button__icon--primary { background-color: #70b85d; border-color: #70b85d; color: #fff; }
+.button__icon--warning { background-color: #000; border-color: #000; color: #fff; }
+.button__icon--default:hover { border: 2px solid #727272; color: #212121; }
+.button__icon--link:hover { color: #212121; }
+.button__icon--link-secondary:hover { color: #212121; }
+.button__icon--secondary:hover { background-color: #ecf0f1; border-color: #519140; color: #212121; }
+.button__icon--primary:hover { background-color: #519140; color: #fff; }
+.button__icon--warning:hover { background-color: #2a2a2a; color: #fff; }
+
+
+/* YazÄ± iÃ§ine gelen butonlar ve kombinasyonlarÄ± */
+.button__label__wrapper { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-align-items: center; -ms-flex-align: center; align-items: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+.button__label__wrapper .button--link { padding: 0; }
+.button__label__wrapper > span { margin: 0 12px; }
+.button__label__wrapper--prefix > span { margin: 0 3px; }
+.button__label__wrapper--postfix > span { margin: 0 3px; }
+.button__label__wrapper--both > span {margin: 0 3px; }
