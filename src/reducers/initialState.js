@@ -1,4 +1,8 @@
 export default {
   folders: [],
-  bookmarks: []
+  bookmarks: [],
+  filters: {
+    text: "",
+    sortBy: "createdAt"
+  }
 };

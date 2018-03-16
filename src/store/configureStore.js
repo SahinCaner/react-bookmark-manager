@@ -1,9 +1,9 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
-import auth from '../reducers/authReducer';
-import folders from '../reducers/folderReducer';
-import bookmarks from '../reducers/bookmarkReducer';
-
+import { createStore, combineReducers, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
+import auth from "../reducers/authReducer";
+import folders from "../reducers/folderReducer";
+import bookmarks from "../reducers/bookmarkReducer";
+import filters from "../reducers/filterReducer";
 
 // REDUX BROWSWER PLUGIN
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -13,7 +13,8 @@ export default () => {
     combineReducers({
       auth,
       folders,
-      bookmarks
+      bookmarks,
+      filters
     }),
     composeEnhancers(applyMiddleware(thunk))
   );

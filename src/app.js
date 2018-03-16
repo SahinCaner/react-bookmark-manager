@@ -10,8 +10,9 @@ import { startSetFolders } from './actions/folderActions';
 import { startSetBookmarks } from './actions/bookmarkActions';
 
 import 'normalize.css/normalize.css';
+import 'toastr/build/toastr.min.css';
 import './styles/styles.scss';
-import 'react-dates/lib/css/_datepicker.css';
+
 
 const store = configureStore();
 

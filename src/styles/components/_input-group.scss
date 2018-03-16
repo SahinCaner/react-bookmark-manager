@@ -1,16 +1,121 @@
-.input-group {
+.input__group--multicolumn {
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
-  margin-bottom: $m-size;
-  @media (min-width: $desktop-breakpoint) {
-    flex-direction: row;
-    margin-bottom: $l-size;
-  }
+}
+.input__group--multicolumn .input__group {
+  width: 100%;
+}
+.input__group label {
+  display: block;
+  min-height: 1.8rem;
+}
+.input__group--verticalcenter {
+  align-items: center;
+  justify-content: space-between;
+}
+.input__group ~ .input__group {
+  margin-top: 2.5rem;
 }
 
-.input-group__item {
-  margin-bottom: $s-size;
-  @media (min-width: $desktop-breakpoint) {
-    margin: 0 $s-size 0 0;
+.input__group--error label {
+  color: #ef5a54;
+}
+.input__group--error label.microcopy--error {
+  color: #ef5a54;
+  margin: .2rem 0 0;
+}
+.input__group--error .form__input {
+  border-color: #ef5a54;
+}
+.input__group input[type="checkbox"] {
+  position: absolute;
+}
+.input__group .checkbox ~ .checkbox {
+  margin-top: 1.5rem;
+}
+.input__group .checkbox {
+  font-size: 1.4rem;
+  margin: 0;
+}
+.input__group .checkbox label {
+  display: inline-flex;
+  font-size: 1.4rem;
+}
+.input__group .checkbox label span {
+  color: #b8b8b8;
+  margin: 0 .5rem;
+}
+.input__group .checkbox label ~ label {
+  margin-top: 1rem;
+  cursor: default;
+}
+.input__group .checkbox label + label.microcopy {
+  display: block;
+  margin-top: .2rem;
+}
+.input__group input[type="radio"] {
+  position: absolute;
+  margin-top: .3rem;
+}
+.input__group .radio ~ .radio {
+  margin-top: 1.5rem;
+}
+.input__group .radio {
+  font-size: 1.4rem;
+  margin: 0;
+}
+.input__group .radio label {
+  display: block;
+  font-size: 1.4rem;
+}
+.input__group .radio label span {
+  color: $font3-color;
+}
+.input__group .radio label ~ label {
+  margin-top: .5rem;
+  cursor: default;
+}
+.input__group .radio label + label.microcopy {
+  margin-top: .2rem;
+}
+.input__group h5.radio__checkbox__group__header {
+  margin: 0 0 1rem;
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+.input__group h5.input__group__innner__header {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+.input__group .microcopy--info {
+  margin-top: .2rem;
+  font-size: 1.3rem !important;
+  font-style: italic;
+}
+
+.input__group > .card__item {
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .input__group--multicolumn {
+    flex-direction: row;
   }
+  .input__group--multicolumn .input__group {
+    flex: 1 1 0;
+    padding-right: 4rem;
+  }
+  .input__group--multicolumn .input__group:last-of-type {
+    padding-right: 0;
+  }
+  .input__group--multicolumn .input__group ~ .input__group {
+    margin-top: 0;
+  }
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
 }
