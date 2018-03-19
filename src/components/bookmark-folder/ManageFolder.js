@@ -13,7 +13,6 @@ import { startFindFolderBookmarks } from "../../actions/bookmarkActions";
 import BookmarkList from "../bookmark/BookmarkList";
 import selectBookmarks from "../../selectors/bookmarksSelector";
 import filteredBookmarksSelector from "../../selectors/filteredBookmarksSelector";
-import ManageBookmark from "../bookmark/ManageBookmark";
 import Box from "../common/box/Box";
 import BoxHeader from "../common/box/BoxHeader";
 import BoxBody from "../common/box/BoxBody";
@@ -35,7 +34,7 @@ export class ManageFolder extends React.Component {
 
   componentWillReceiveProps = nextProps => {
     if (this.props.folder.id !== nextProps.folder.id) {
-      // Necessary to populate form when existing course is loaded directly.
+      // Necessary to populate form when existing folder is loaded directly.
       this.setState({ folder: Object.assign({}, nextProps.folder) });
     }
     if (this.props.folder.title !== nextProps.folder.title) {
@@ -180,7 +179,7 @@ export class ManageFolder extends React.Component {
                     </div>
                     <div className="banner__item banner__item--button banner__item--center">
                       <Link
-                        to={`/bookmark/folder/${this.state.folder.id}`}
+                        to={`/add/bookmark/${this.state.folder.id}`}
                         className="btn btn--primary"
                       >
                         ADD BOOKMARK

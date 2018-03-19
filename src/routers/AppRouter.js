@@ -9,7 +9,8 @@ import LoginPage from '../components/login/LoginPage';
 import FoldersPage from '../components/bookmark-folder/FoldersPage';
 import ManageFolder from '../components/bookmark-folder/ManageFolder';
 import UpdateFolder from '../components/bookmark-folder/UpdateFolder';
-import ManageBookmark from '../components/bookmark/ManageBookmark';
+import EditBookmark from '../components/bookmark/EditBookmark';
+import AddBookmark from '../components/bookmark/AddBookmark';
 
 
 export const history = createBrowserHistory();
@@ -23,9 +24,10 @@ const AppRouter = () => (
       <PrivateRoute path="/update/folder/:id" component={UpdateFolder} />
       <PrivateRoute path="/folder/:id" component={ManageFolder} />
       <PrivateRoute path="/folder" component={ManageFolder} />
-      <PrivateRoute path="/bookmark/folder/:folderId" component={ManageBookmark} />
-      <PrivateRoute path="/bookmark/:id" component={ManageBookmark} />
-      <PrivateRoute path="/bookmark" component={ManageBookmark} />
+      {/* <PrivateRoute path="/bookmark/folder/:folderId" component={AddBookmark} /> */}
+      <PrivateRoute path="/edit/bookmark/:id" component={EditBookmark} />
+      <PrivateRoute path="/add/bookmark/:folderId" component={AddBookmark} />
+      <PrivateRoute path="/add/bookmark" component={AddBookmark} />
       <Route component={NotFoundPage} />
     </Switch>
   </Router>

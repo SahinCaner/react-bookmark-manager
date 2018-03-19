@@ -24,7 +24,7 @@ const FolderForm = ({ folder, onSave, onChange, saving, errors }) => {
                   UPDATE
                 </Link>
                 <Link
-                  to={`/bookmark/folder/${folder.id}`}
+                  to={`/add/bookmark/${folder.id}`}
                   className="btn btn--primary"
                 >
                   ADD BOOKMARK

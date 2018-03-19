@@ -89,7 +89,7 @@ export class Navigation extends React.Component {
                 {" "}
                 CREATE FOLDER
               </Link>
-              <Link to="/bookmark" className="btn btn--secondary">
+              <Link to="/add/bookmark" className="btn btn--secondary">
                 {" "}
                 ADD BOOKMARK{" "}
               </Link>

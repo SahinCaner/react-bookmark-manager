@@ -6,7 +6,7 @@ const SelectInput = ({
   label,
   onChange,
   defaultOption,
-  selectedFolderId,
+  selectedValue,
   value,
   error,
   options
@@ -16,7 +16,6 @@ const SelectInput = ({
   if (error && error.length > 0) {
     wrapperClass += " " + "input__group--error";
   }
-
   return (
     <div className={wrapperClass}>
       <label htmlFor={name}>{label}</label>
@@ -24,25 +23,17 @@ const SelectInput = ({
         {/* Note, value is set here rather than on the option - docs: https://facebook.github.io/react/docs/forms.html */}
         <select
           name={name}
-          value={value}
+          defaultValue={selectedValue}
           onChange={onChange}
           className="form__input"
         >
           <option value="">{defaultOption}</option>
           {options.map(option => {
-            if (option.value === selectedFolderId) {
-              return (
-                <option key={option.value} value={option.value} selected>
-                  {option.text}
-                </option>
-              );
-            } else {
-              return (
-                <option key={option.value} value={option.value}>
-                  {option.text}
-                </option>
-              );
-            }
+            return (
+              <option key={option.value} value={option.value}>
+                {option.text}
+              </option>
+            );
           })}
         </select>
         {error && <div className="microcopy microcopy--error">{error}</div>}
@@ -58,8 +49,8 @@ SelectInput.propTypes = {
   value: PropTypes.string,
   error: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.object),
-  selectedFolderId: PropTypes.string,
-  label: PropTypes.string,
+  selectedValue: PropTypes.string,
+  label: PropTypes.string
 };
 
 export default SelectInput;

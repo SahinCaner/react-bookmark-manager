@@ -26,8 +26,7 @@ export class ManageBookmark extends Component {
   }
 
   componentWillReceiveProps = nextProps => {
-    console.log("componentWillReceiveProps");
-    if (this.props.bookmark.id !== nextProps.bookmark.id) {
+    if (this.props.bookmark.id != nextProps.bookmark.id) {
       // Necessary to populate form when existing course is loaded directly.
       this.setState({ bookmark: Object.assign({}, nextProps.bookmark) });
     }
@@ -79,24 +78,17 @@ export class ManageBookmark extends Component {
         "http://s2.googleusercontent.com/s2/favicons?domain_url=" +
         this.state.bookmark.href
     };
-    this.props
-      .startUpdateBookmark(this.props.bookmark.id, bookmark)
-      .then(folderId => {
-        this.props.history.push(`/folder/${folderId}`);
-        toastr.success("Bookmark Updated.");
-      });
+    this.props.startUpdateBookmark(this.props.bookmark.id, bookmark);
+    toastr.success("Bookmark updated.");
+    this.props.history.push("/");
   };
 
   removeBookmark = e => {
     e.preventDefault();
-    const id = this.props.bookmark.id;
-    const folderId = this.props.bookmark.folderId;
-
     this.setState({ removing: true });
-    this.props.startRemoveBookmark({ id }).then(() => {
-      toastr.success("Bookmark removed.");
-      this.props.history.push(`/folder/${folderId}`);
-    });
+    this.props.startRemoveBookmark({ id: this.props.bookmark.id });
+    toastr.success("Bookmark removed.");
+    this.props.history.push("/");
   };
 
   saveBookmark = e => {
@@ -115,7 +107,7 @@ export class ManageBookmark extends Component {
     this.setState({ saving: true });
     this.props.startCreateBookmark(bookmark).then(folderId => {
       this.props.history.push(`/folder/${folderId}`);
-      toastr.success("Bookmark added.");
+      toastr.success("Bookmark saved.");
     });
   };
 

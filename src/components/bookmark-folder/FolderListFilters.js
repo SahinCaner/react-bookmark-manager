@@ -18,7 +18,6 @@ export class FolderListFilters extends Component {
     };
   }
   componentWillUnmount = () => {
-    console.log("COMPONENT WILL UNMOUNT");
     this.props.sortByDefault();
   };
 
