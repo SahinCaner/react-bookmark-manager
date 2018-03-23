@@ -1,10 +1,12 @@
 import * as types from "./actionTypes";
 
 // SET_TEXT_FILTER
-export const setTextFilter = (text = "") => ({
-  type: types.SET_TEXT_FILTER,
-  text
-});
+export const setTextFilter = (text = "") => {
+  return {
+    type: types.SET_TEXT_FILTER,
+    text
+  };
+};
 
 // SORT_BY_CREATED_DATE
 export const sortByCreatedAt = () => ({

@@ -3,6 +3,7 @@ ul.button__list {
   flex: 1 1 0;
   min-width: 0.1rem;
   /* Firefox Bug min-width: 1px */
+  min-height: 4rem;
 }
 
 ul.button__list a {

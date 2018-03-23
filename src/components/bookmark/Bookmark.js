@@ -15,7 +15,7 @@ const Bookmark = ({ id, title, href, folderId, createdAt, iconURL }) => {
         </Link>
       </div>
       <div className="bookmark bookmark--update">
-        <Link to={`/edit/bookmark/${id}`}> UPDATE </Link>
+        <Link to={`/edit/bookmark/${id}`}> EDIT </Link>
       </div>
     </li>
   );

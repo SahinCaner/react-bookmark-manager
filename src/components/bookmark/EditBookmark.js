@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import toastr from "toastr";
-
 import BookmarkForm from "./BookmarkForm";
 import {
   startUpdateBookmark,
@@ -14,9 +13,10 @@ export class EditBookmark extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      folderId: this.props.bookmark.folderId ? this.props.bookmark.folderId : ""
+      folderId: props.bookmark.folderId ? props.bookmark.folderId : ""
     };
   }
+  
   onUpdateBookmark = bookmark => {
     this.props
       .startUpdateBookmark(this.props.bookmark.id, bookmark)
@@ -29,8 +29,6 @@ export class EditBookmark extends React.Component {
   onRemoveBookmark = bookmark => {
     const id = this.props.bookmark.id;
     const folderId = this.state.folderId;
-
-    console.log("FOLDER ID:", folderId);
 
     this.props.startRemoveBookmark({ id }).then(() => {
       this.props.history.push(`/folder/${folderId}`);
@@ -47,6 +45,7 @@ export class EditBookmark extends React.Component {
           folders={this.props.folders}
           selectedValue={this.state.folderId}
           onRemoveBookmark={this.onRemoveBookmark}
+          updating={this.state.updating}
         />
       </div>
     );

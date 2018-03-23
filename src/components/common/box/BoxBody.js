@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
+import classNames from "classnames";
 
-export default (props) => {
-  return (
-    <div className="box__item box__item--body">
-      {props.children}
-    </div>
-  )
-}
+export default props => {
+  const groupClasses = classNames("box__item box__item--body", {
+    "box__item--banner": props.banner
+  });
+  return <div className={groupClasses}>{props.children}</div>;
+};

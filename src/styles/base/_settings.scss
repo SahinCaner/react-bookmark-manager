@@ -1,41 +1,29 @@
-// COLORS
-$funky-red: #FA4858;
-$funky-blue: #31D3ED;
-$funky-green: #32D3BD;
+// FONT COLORS
+$color-1: hsl(195, 5%, 15%);
+$color-2: lighten($color-1, 30%);
+$color-3: lighten($color-2, 25%);
+$color-4: lighten($color-3, 10%);
+
+$background: lighten(hsl(216, 33%, 94%), 4.2%);
+$border-color: darken($background, 4%);
+
+$funky-red: #fa4858;
+$funky-blue: #31d3ed;
+$funky-green: #32d3bd;
 $component-background: #fff;
 
-$input-background-color: #FAFAFB;
+$input-background-color: #f9fafc;
 
 //FONT COLORS
-$heading1-color: #242728;
-$heading2-color: #3c4143;
+// $heading1-color: #242728;
+// $heading2-color: #3c4143;
 
-$font1-color: #646C70;
-$font2-color: #9092A5;
-$font3-color: #A8A9B8;
+// $font1-color: #646C70;
+// $font2-color: #9092A5;
+// $font3-color: #A8A9B8;
 
 $error-color: #ef5a54;
 
 // BORDER
-$border-color: #E9ECF3;
-$button-border-radius: 1.9rem;
-$border-radius: .4rem;
-
-
-// Font Size
-$font-weight-normal: 400;
-$heading-1: 3.2rem;
-$heading-2: 2.2rem;
-$font-size-large: 1.8rem;
-$font-size-small: 1.4rem;
-
-// PADDING
-$s-padding: 1.6rem;
-$m-padding: 2rem;
-$l-padding: 2.4rem;
-// Spacing
-$s-size: 1.2rem;
-$m-size: 1.4rem;
-$l-size: 3.2rem;
-$xl-size: 4.8rem;
-$desktop-breakpoint: 45rem;
+// $border-color: #E9ECF3;
+$border-radius: 0.4rem;

@@ -7,15 +7,24 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: calc(1.4rem + (16 - 14) * (100vw - 32rem) / (1920 - 320));
   background-color: #fff;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $font1-color;
+  color: $color-1;
   overflow-y: scroll;
   overflow-x: hidden;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Proxima Nova";
+  background-color: $background;
+}
+
+body,
+select,
+input,
+textarea,
+button {
+  font-weight: 600;
 }
 
 ol,
@@ -24,6 +33,30 @@ ul {
   padding: 0;
   list-style: none;
 }
+
+h1 {
+  font-size: calc(2.4rem + (38 - 24) * (100vw - 32rem) / (1920 - 320));
+}
+h2 {
+  font-size: calc(2.1rem + (29 - 21) * (100vw - 32rem) / (1920 - 320));
+}
+h3 {
+  font-size: calc(1.8rem + (22 - 18) * (100vw - 32rem) / (1920 - 320));
+}
+h4 {
+  font-size: calc(1.4rem + (16 - 14) * (100vw - 32rem) / (1920 - 320));
+}
+
+label {
+  display: inline-block;
+  padding-left: 1.5rem;
+  font-size: calc(1rem + (12 - 10) * (100vw - 32rem) / (1920 - 320));
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  color: $color-1;
+}
+
 h1,
 h2,
 h3,
@@ -32,9 +65,24 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 a {
   text-decoration: none;
+}
+
+.toast-top-right {
+  bottom: 6px;
+  top: initial;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-color: hsl(0, 0%, 100%);
+  }
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
 }

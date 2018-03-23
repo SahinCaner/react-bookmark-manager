@@ -1,17 +1,17 @@
 .form__input {
   flex: 1 1 100%;
-  height: 38px;
+  height: 4rem;
   width: 100%;
   padding: 0 1.5rem;
   background-color: transparent;
-  border: 1px solid darken($border-color, 7%);
+  border: 0.1rem solid darken($border-color, 7%);
   border-radius: 0;
   box-shadow: none;
-  border-radius: 19px;
+  border-radius: 2rem;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   -webkit-appearance: none; /* to remove mobile safari boxshadow */
   font-size: 1.4rem;
-  color: $heading1-color;
+  color: $color-1;
   background-color: #fff;
 }
 .form__input--noborder {
@@ -51,32 +51,23 @@ textarea.form__input {
 }
 .select__wrapper:before {
   position: absolute;
+  content: "";
   right: 2rem;
-  top: .9rem;
-  width: 1.6rem;
-  height: 1.8rem;
-  content: "\f078";
-  font-family: "Fontawesome";
-  color: $font2-color;
+  top: 1.7rem;
+  width: 0; 
+  height: 0; 
+  border-left: .6rem solid transparent;
+  border-right: .6rem solid transparent;
+  border-top: .6rem solid $color-3;
   z-index: 2;
   pointer-events: none;
-}
-
-label {
-  display: inline-block;
-  padding-left: 1.5rem;
-  font-size: 12px;
-  font-family: 'Lato', sans-serif;
-  font-weight: bold;
-  letter-spacing: 0.15rem;
-  color: $heading2-color;
 }
 
 .microcopy {
   margin-top: .7rem;
   padding-left: 1.5rem;
   font-size: 1.2rem;
-  color: $font3-color;
+  color: $color-4;
 }
 
 .microcopy--error {
@@ -89,19 +80,20 @@ label {
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: lighten($font3-color, 10%);
+  color: lighten($color-3, 10%);
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: lighten($font3-color, 10%);
+  color: lighten($color-3, 10%);
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: lighten($font3-color, 10%);
+  color: lighten($color-3, 10%);
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: lighten($font3-color, 10%);
+  color: lighten($color-3, 10%);
 }
 
 @media (min-width: 768px) {
+  .microcopy { font-size: 1.3rem; }
 }
 @media (min-width: 992px) {
 }

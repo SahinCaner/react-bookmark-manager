@@ -5,22 +5,22 @@ input[type="submit"] {
 
 .btn {
   display: inline-block;
-  padding: 1rem 1.4rem;
+  padding: 1.1rem 1.4rem;
   font-weight: bold;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
   border: 1px solid transparent;
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.5;
-  border-radius: $button-border-radius;
+  border-radius: 2rem;
   white-space: nowrap;
   cursor: pointer;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   font-family: "Lato", sans-serif;
-  letter-spacing: 0.13rem;
+  letter-spacing: 0.13em;
 }
 .btn i {
   font-size: 1.6rem;
@@ -56,7 +56,6 @@ input[type="submit"] {
   }
 }
 
-
 .btn--link {
   color: $funky-green;
   background-color: transparent;
@@ -73,3 +72,11 @@ input[type="submit"] {
 .btn--mobile {
   padding: 0.6rem 0;
 }
+
+
+@media (min-width: 768px) {
+  .btn { font-size: 1.1rem; }
+}
+@media (min-width: 992px) {}
+@media (min-width: 1200px) {}
+

@@ -2,17 +2,20 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 6rem;
   width: 100%;
+  z-index: 10000;
 }
 .navigation__item {
   display: flex;
 }
 .navigation__item--header {
+  background-color: #fff;
   align-items: center;
   justify-content: space-between;
   height: 6rem;
   padding: 0 1.6rem;
+  border-bottom: .1rem solid $border-color;
 }
 .navigation__item--body {
   position: fixed;
@@ -45,10 +48,10 @@ ul.nav__menu > li.space {
   flex: 1;
 }
 ul.nav__menu > li a {
-  color: $font3-color;
+  color: $color-3;
 }
 ul.nav__menu > li a:hover {
-  color: $font1-color;
+  color: $color-2;
 }
 ul.nav__menu > li a.selected {
   color: $funky-green;
@@ -59,7 +62,7 @@ ul.nav__menu > li > h2 {
 }
 ul.nav__menu > li > h2 a {
   font-family: "Lato", sans-serif;
-  color: $heading2-color;
+  color: $color-1;
 }
 ul.nav__menu > li > h2 a.selected {
   color: $funky-green;
@@ -96,11 +99,20 @@ ul.sub__nav__menu {
   align-items: center;
   justify-content: flex-end;
 }
+.navigation ul.button__list li {
+  width: 100%;
+}
 .navigation ul.button__list li ~ li {
   margin: 2rem 0 0;
 }
 
+.navigation ul.button__list a {
+  width: 100%;
+}
+
+
 @media (min-width: 768px) {
+
   .navigation__item--body {
     position: relative;
     transform: translate3d(0, 0, 0);
@@ -108,6 +120,7 @@ ul.sub__nav__menu {
   .navigation {
     max-width: 25rem;
     border-right: 0.1rem solid $border-color;
+    height: 100%;
   }
   .navigation__item {
     padding: 0 3rem;

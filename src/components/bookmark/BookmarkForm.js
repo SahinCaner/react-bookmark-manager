@@ -32,6 +32,19 @@ export class BookmarkForm extends React.Component {
     };
   }
 
+  addHTTP(url) {
+    if (!/^(f|ht)tps?:\/\//i.test(url)) {
+      url = "http://" + url;
+    }
+    return url;
+  }
+
+  validateURL(url) {
+    return /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:[/?#]\S*)?$/i.test(
+      url
+    );
+  }
+
   bookmarkFormIsValid = () => {
     let formIsValid = true;
     let errors = {};
@@ -42,7 +55,12 @@ export class BookmarkForm extends React.Component {
     }
 
     if (this.state.bookmark.href === "") {
-      errors.href = "You must enter link";
+      errors.href = "You must enter URL";
+      formIsValid = false;
+    }
+
+    if (this.validateURL(this.addHTTP(this.state.bookmark.href)) !== true) {
+      errors.href = "You must enter valid URL";
       formIsValid = false;
     }
 
@@ -75,9 +93,9 @@ export class BookmarkForm extends React.Component {
       updatedAt: Date.now(),
       iconURL:
         "http://s2.googleusercontent.com/s2/favicons?domain_url=" +
-        this.state.bookmark.href
+        this.state.bookmark.href,
+      href: this.addHTTP(this.state.bookmark.href)
     };
-
     this.setState({ errors: {} });
     this.props.onUpdateBookmark(bookmark);
   };
@@ -90,12 +108,13 @@ export class BookmarkForm extends React.Component {
 
     this.setState({ saving: true });
 
-    const bookmark = {
+    let bookmark = {
       ...this.state.bookmark,
       createdAt: Date.now(),
       iconURL:
         "http://s2.googleusercontent.com/s2/favicons?domain_url=" +
-        this.state.bookmark.href
+        this.state.bookmark.href,
+      href: this.addHTTP(this.state.bookmark.href)
     };
 
     this.setState({ errors: {} });
@@ -120,7 +139,7 @@ export class BookmarkForm extends React.Component {
                 {this.props.onAddBookmark ? (
                   <BoxHeader title="Add Bookmark" />
                 ) : (
-                  <BoxHeader title="Update Bookmark" />
+                  <BoxHeader title="Edit Bookmark" />
                 )}
                 <BoxBody>
                   <TextInput
@@ -171,8 +190,8 @@ export class BookmarkForm extends React.Component {
                         onClick={this.onUpdateBookmark}
                       >
                         {this.state.updating
-                          ? "UPDATING..."
-                          : "UPDATE BOOKMARK"}
+                          ? "SAVING..."
+                          : "SAVE"}
                       </button>
                     )}
                     {/* if user add bookmark to existing folder on cancel return to folder */}
@@ -196,10 +215,10 @@ export class BookmarkForm extends React.Component {
           </div>
         </div>
         {!this.props.onAddBookmark && (
-          <div className="main__item main__item--content">
+          <div className="main__item main__item--footer">
             <div className="container container--small">
               <Box>
-                <BoxItem alignRight>
+                <BoxItem alignRight transparent>
                   <button
                     type="submit"
                     disabled={this.state.removing}

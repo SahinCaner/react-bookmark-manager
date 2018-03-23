@@ -2,6 +2,7 @@
 @import './base/settings';
 @import './base/base';
 
+
 @import './components/scaffold';
 @import './components/main';
 @import './components/navigation';
@@ -13,23 +14,5 @@
 @import './components/banner';
 @import './components/filter';
 @import './components/bookmark';
-
-// @import './components/header';
-// @import './components/menu';
-// @import './components/main';
-// @import './components/card';
-// @import './components/content-container';
-// @import './components/input-group';
-// @import './components/input';
-// @import './components/form';
-// @import './components/infobox';
-// @import './components/visibility';
-// @import './components/loader';
-// @import './components/inline-form';
-// @import './components/deep-menu';
-// @import './components/banner';
-// @import './components/course';
-// @import './components/box';
-
-// @import './components/button';
-// @import './components/button-list';
+@import './components/folder-list';
+@import './components/font';

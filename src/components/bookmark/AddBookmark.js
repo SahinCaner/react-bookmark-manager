@@ -11,6 +11,7 @@ import BoxHeader from "../common/box/BoxHeader";
 import BoxBody from "../common/box/BoxBody";
 import BoxItem from "../common/box/BoxItem";
 import ButtonList from "../common/button-list/ButtonList";
+import Banner from "../common/banner/Banner";
 
 export class AddBookmark extends React.Component {
   onAddBookmark = bookmark => {
@@ -22,38 +23,28 @@ export class AddBookmark extends React.Component {
   render() {
     return (
       <div className="main">
-        {/* Check if user has folder or not */}
-        {this.props.folders.length !== 0 ? (
+        {this.props.folders.length > 0 ? (
           <BookmarkForm
             onAddBookmark={this.onAddBookmark}
             folders={this.props.folders}
             selectedValue={this.props.folderId}
           />
         ) : (
-          <Box>
-            <BoxBody>
-              <div className="banner">
-                <div className="banner__item banner__item--image banner__item--center">
-                  <p>&#x1F605;</p>
-                </div>
-                <div className="banner__item banner__item--message banner__item--center">
-                  <h3>You have no folder to add a bookmark.</h3>
-                  <p>Folders are essential for good organization. </p>
-                </div>
-              </div>
-              <div className="banner__item banner__item--button banner__item--center">
-                <Link to={`/folder`} className="btn btn--primary">
+          <div className="main__item main__item--content">
+            <div className="container">
+              <Banner
+                title="You have no folder to add a bookmark."
+                subtitle="Folders are essential for good organization."
+                microcopy="-Once you have folders, you will be able to add bookmarks to
+                  the folders."
+                emoji="&#x1F605;"
+              >
+                <Link to={`/add/folder`} className="btn btn--primary">
                   CREATE FOLDER FIRST
                 </Link>
-              </div>
-            </BoxBody>
-            <BoxItem alignRight>
-              <p className="microcopy">
-                -Once you have folders, you will be able to add bookmarks to the
-                folders.
-              </p>
-            </BoxItem>
-          </Box>
+              </Banner>
+            </div>
+          </div>
         )}
       </div>
     );

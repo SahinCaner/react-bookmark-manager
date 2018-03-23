@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import FolderList from "../../bookmark-folder/FolderList";
+import FolderList from "../../folder-list/FolderList";
 import ButtonList from "../button-list/ButtonList";
 import classNames from "classnames";
 import { startLogout } from "../../../actions/authActions";
@@ -85,7 +85,7 @@ export class Navigation extends React.Component {
             </li>
             <li className="space" />
             <ButtonList alignCenter>
-              <Link to="/folder" className="btn btn--secondary">
+              <Link to="/add/folder" className="btn btn--secondary">
                 {" "}
                 CREATE FOLDER
               </Link>

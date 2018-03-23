@@ -8,14 +8,14 @@
 }
 .input__group label {
   display: block;
-  min-height: 1.8rem;
+  min-height: 1.8em;
 }
 .input__group--verticalcenter {
   align-items: center;
   justify-content: space-between;
 }
 .input__group ~ .input__group {
-  margin-top: 2.5rem;
+  margin-top: 3rem;
 }
 
 .input__group--error label {
@@ -70,7 +70,7 @@
   font-size: 1.4rem;
 }
 .input__group .radio label span {
-  color: $font3-color;
+  color: $color-3;
 }
 .input__group .radio label ~ label {
   margin-top: .5rem;

@@ -1,6 +1,3 @@
-ul.bookmark__list {
-  font-size: 1.4rem;
-}
 ul.bookmark__list li {
   position: relative;
   display: flex;
@@ -17,10 +14,11 @@ ul.bookmark__list .bookmark a {
 }
 
 ul.bookmark__list .bookmark__link {
-  padding-left: 1.6rem;
+  padding: 0 1.6rem;
+  word-break: break-all;
 }
 ul.bookmark__list .bookmark--link a {
-  color: $heading2-color;
+  color: $color-2;
 }
 
 ul.bookmark__list .bookmark--link a:hover {
@@ -35,7 +33,7 @@ ul.bookmark__list .bookmark--update {
 }
 
 ul.bookmark__list .bookmark--update a {
-  color: $font3-color;
+  color: $color-3;
 }
 ul.bookmark__list .bookmark--update a:hover {
   color: darken($funky-blue, 10%);
@@ -54,11 +52,4 @@ ul.bookmark__list .bookmark__image {
 ul.bookmark__list li img {
   height: 1.6rem;
   width: 1.6rem;
-  border-radius: 50%;
-}
-
-h3.bookmark__list__header {
-  font-size: 1.8rem;
-  color: $font2-color;
-  margin-bottom: 1.5rem;
 }
