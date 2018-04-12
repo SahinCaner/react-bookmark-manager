@@ -27,20 +27,20 @@ input[type="submit"] {
 }
 .btn--primary {
   color: #fff;
-  background-color: $funky-green;
+  background-color: $primary-color;
   @include hover {
-    background-color: darken($funky-green, 10%);
+    background-color: darken($primary-color, 10%);
     border-color: transparent;
     color: #fff;
   }
 }
 
 .btn--secondary {
-  color: $funky-green;
+  color: $primary-color;
   background-color: transparent;
-  border-color: $funky-green;
+  border-color: $primary-color;
   @include hover {
-    background-color: darken($funky-green, 10%);
+    background-color: darken($primary-color, 10%);
     border-color: transparent;
     color: #fff;
   }
@@ -57,10 +57,10 @@ input[type="submit"] {
 }
 
 .btn--link {
-  color: $funky-green;
+  color: $primary-color;
   background-color: transparent;
   @include hover {
-    color: darken($funky-green, 20%);
+    color: darken($primary-color, 20%);
     border-color: transparent;
   }
 }
@@ -71,6 +71,10 @@ input[type="submit"] {
 }
 .btn--mobile {
   padding: 0.6rem 0;
+  color: $color-2;
+  @include hover {
+    color: $primary-color !important;
+  }
 }
 
 

@@ -8,6 +8,10 @@ body,
 .wrapper {
   display: flex;
 }
+.wrapper--login {
+  align-items: center;
+  justify-content: center;
+}
 
 .container {
   display: flex;

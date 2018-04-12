@@ -77,6 +77,10 @@ a {
   top: initial;
 }
 
+.toast-success {
+  background-color: $primary-success;
+}
+
 @media (min-width: 768px) {
   body {
     background-color: hsl(0, 0%, 100%);

@@ -2,8 +2,9 @@ import React from 'react'
 
 export default () => {
   return (
-    <div className="loader">
-      <img className="loader-image" src="/images/loader.gif" />
+    <div className="loader__wrapper">
+      <h4>Loading</h4>
+      <div className="heart"></div>
     </div>
   )
 }

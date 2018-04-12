@@ -4,5 +4,6 @@ export default {
   filters: {
     text: "",
     sortBy: "createdAt"
-  }
+  },
+  userData: {}
 };

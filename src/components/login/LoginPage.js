@@ -1,24 +1,25 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { startLogin } from '../../actions/authActions';
+import React from "react";
+import { connect } from "react-redux";
+import { startLogin } from "../../actions/authActions";
 
 // we export component for testing
 export const LoginPage = ({ startLogin }) => (
-  <div className="box-layout">
-    <div className="box-layout__box">
-      <h1>Boilerplate</h1>
-      <p>tag line</p>
-      <button 
-        onClick={startLogin}
-        className="button"
-      >
-        Login with Google
-      </button>
+  <div className="wrapper wrapper--login">
+    <div className="login__wrapper">
+      <div className="login__item login__item--top">
+        <h1>ManageURLs</h1>
+      </div>
+      <div className="login__item login__item--bottom">
+        <p>Manage your bookmarks with ease.</p>
+        <button onClick={startLogin} className="btn btn--primary">
+          LOGIN WITH GOOGLE
+        </button>
+      </div>
     </div>
   </div>
 );
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   startLogin: () => dispatch(startLogin())
 });
 

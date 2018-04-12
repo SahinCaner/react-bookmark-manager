@@ -1,79 +1,23 @@
-// .bookmark__filter__wrapper {
-//   display: flex;
-// }
-// .bookmark__filter__wrapper .input__group {
-//   flex: 1 1 50%;
-// }
-
-// .bookmark__filter__wrapper .input__group input {
-//   width: 300px;
-// }
-// .input__group--filter {
-//   display: flex;
-//   align-items: center;
-//   justify-content: flex-end;
-//   margin-top: 0 !important;
-//   font-family: "Lato", sans-serif;
-//   font-weight: bold;
-//   font-size: 1.2rem;
-//   letter-spacing: 0.1rem;
-// }
-// .input__group--filter p {
-//   margin: 0 2.5rem 0 0;
-//   color: $font3-color;
-// }
-// ul.filter__options {
-//   display: flex;
-//   color: $font2-color;
-// }
-
-// ul.filter__options li {
-//   position: relative;
-//   padding: 0 0.3rem;
-//   transition: 120ms color;
-//   cursor: pointer;
-// }
-// ul.filter__options li:hover {
-//   color: $funky-blue;
-// }
-// ul.filter__options li:before {
-//   position: absolute;
-//   bottom: -0.8rem;
-//   left: 0;
-//   height: 0.4rem;
-//   width: 100%;
-//   border-radius: 0.2rem;
-//   background-color: transparent;
-//   content: "";
-// }
-
-// ul.filter__options li.selected {
-//   color: $funky-blue;
-// }
-
-// ul.filter__options li.selected:before {
-//   background-color: $funky-blue;
-// }
-
-// ul.filter__options li ~ li {
-//   margin-left: 4rem;
-// }
-
 .filter__wrapper {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
+
+.filter__item {
+  width: 100%;
+}
+.filter__item ~ .filter__item {
+  margin-top: 1.6rem;
+}
 .filter__item--text {
   flex: 1;
-  max-width: 40rem;
-  margin-right: 4rem;
 }
 .filter__item--sort {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin: 0 0 0 4rem;
 }
 .filter__item--sort p {
   margin: 0 1.5rem 0 0;
@@ -85,6 +29,22 @@
 }
 
 @media (min-width: 768px) {
+  .filter__wrapper {
+    flex-direction: row;
+  }
+  .filter__item {
+    width: auto;
+  }
+  .filter__item ~ .filter__item {
+    margin-top: 0;
+  }
+  .filter__item--text {
+    max-width: 40rem;
+    margin-right: 4rem;
+  }
+  .filter__item--sort {
+    margin: 0 0 0 4rem;
+  }
 }
 @media (min-width: 992px) {
 }

@@ -1,18 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { firebase } from './firebase/firebase';
-import AppRouter, { history } from './routers/AppRouter';
-import configureStore from './store/configureStore';
-import { login, logout } from './actions/authActions';
-import LoadingPage from './components/common/LoadingPage';
-import { startSetFolders } from './actions/folderActions';
-import { startSetBookmarks } from './actions/bookmarkActions';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { firebase } from "./firebase/firebase";
+import AppRouter, { history } from "./routers/AppRouter";
+import configureStore from "./store/configureStore";
+import { login, logout } from "./actions/authActions";
+import LoadingPage from "./components/common/LoadingPage";
+import { startSetFolders } from "./actions/folderActions";
+import { startSetBookmarks } from "./actions/bookmarkActions";
+import { getUserData } from "./actions/userActions";
 
-import 'normalize.css/normalize.css';
-import 'toastr/build/toastr.min.css';
-import './styles/styles.scss';
-
+import "normalize.css/normalize.css";
+import "toastr/build/toastr.min.css";
+import "./styles/styles.scss";
 
 const store = configureStore();
 
@@ -26,26 +26,27 @@ let hasRendered = false;
 
 const renderApp = () => {
   if (!hasRendered) {
-    ReactDOM.render(jsx, document.getElementById('app'));
+    ReactDOM.render(jsx, document.getElementById("app"));
     hasRendered = true;
   }
 };
 
-ReactDOM.render(<LoadingPage />, document.getElementById('app'));
+ReactDOM.render(<LoadingPage />, document.getElementById("app"));
 
-firebase.auth().onAuthStateChanged((user) => {
+firebase.auth().onAuthStateChanged(user => {
   if (user) {
     store.dispatch(login(user.uid));
+    store.dispatch(getUserData(user))
     store.dispatch(startSetBookmarks());
     store.dispatch(startSetFolders()).then(() => {
       renderApp();
-      if (history.location.pathname === '/') {
-        history.push('/dashboard');
+      if (history.location.pathname === "/") {
+        history.push("/folders");
       }
     });
   } else {
     store.dispatch(logout());
     renderApp();
-    history.push('/');
+    history.push("/");
   }
 });

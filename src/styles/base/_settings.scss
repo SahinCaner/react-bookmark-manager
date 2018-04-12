@@ -7,9 +7,12 @@ $color-4: lighten($color-3, 10%);
 $background: lighten(hsl(216, 33%, 94%), 4.2%);
 $border-color: darken($background, 4%);
 
+$primary-color: #31d3ed;
+
 $funky-red: #fa4858;
-$funky-blue: #31d3ed;
-$funky-green: #32d3bd;
+// $funky-blue: #31d3ed;
+$primary-success: #32d3bd;
+
 $component-background: #fff;
 
 $input-background-color: #f9fafc;

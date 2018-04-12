@@ -22,6 +22,12 @@ export class Navigation extends React.Component {
       : this.setState({ isMobileMenuActive: undefined });
   };
 
+  // getFirstName = displayName => {
+  //   const firstSpace = displayName.indexOf(" ");
+  //   const name = displayName.slice(0, firstSpace).toUpperCase();
+  //   return name;
+  // };
+
   render() {
     const navigationClasses = classNames("navigation", {
       "is-active": this.state.isMobileMenuActive
@@ -31,7 +37,8 @@ export class Navigation extends React.Component {
       <div className={navigationClasses}>
         <div className="navigation__item navigation__item--header">
           <div className="navigation__logo">
-            <Link to="/">Bookify</Link>
+            <Link to="/folders">ManageURLs</Link>
+            <div className="btn btn--link" onClick={this.props.startLogout}>Logout</div>
           </div>
           <div
             className="navigation__mobile__menu"
@@ -47,11 +54,10 @@ export class Navigation extends React.Component {
           </div>
           <ul className="nav__menu">
             <li>
-              <h2>
-                <NavLink to="/folders" activeClassName="selected">
-                  FOLDERS
-                </NavLink>
-              </h2>
+              <NavLink to="/folders" activeClassName="selected">
+                <img src="/images/Folder.svg" alt="" />
+                <h2>FOLDERS</h2>
+              </NavLink>
               {this.props.folders.length > 0 && (
                 <ul className="sub__nav__menu">
                   {this.props.folders.map(folder => {
@@ -70,19 +76,17 @@ export class Navigation extends React.Component {
               )}
             </li>
             <li>
-              <h2>
-                <NavLink to="/bookmarks" activeClassName="selected">
-                  BOOKMARKS
-                </NavLink>
-              </h2>
+              <NavLink to="/bookmarks" activeClassName="selected">
+                <img src="/images/Link.svg" alt="" />
+                <h2>BOOKMARKS</h2>
+              </NavLink>
             </li>
-            <li>
-              <h2>
-                <NavLink to="/settings" activeClassName="selected">
-                  SETTINGS
-                </NavLink>
-              </h2>
-            </li>
+            {/* <li>
+              <NavLink to="/settings" activeClassName="selected">
+                <img src={this.props.user.photoURL} alt="" />
+                <h2>{this.getFirstName(this.props.user.displayName)}</h2>
+              </NavLink>
+            </li> */}
             <li className="space" />
             <ButtonList alignCenter>
               <Link to="/add/folder" className="btn btn--secondary">
@@ -107,37 +111,13 @@ Navigation.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    folders: state.folders,
-    bookmarks: state.folders
+    folders: state.folders
+    // user: state.userData.user
   };
 };
+
 const mapDispatchToProps = dispatch => ({
   startLogout: () => dispatch(startLogout())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
-
-// export class LeftPanel extends React.Component {
-//   render() {
-//     return (
-//       <div className="navigation">
-//         <div className="navigation__item navigation__item--header">
-//           <div className="logo">
-//             <Link to="/"><h1>Bookify</h1></Link>
-//           </div>
-//         </div>
-//         <div className="navigation__item navigation__item--content">
-//         <ul className="menu">
-//           <li><NavLink to="/folders" activeClassName="active">Folders</NavLink></li>
-//           <li><NavLink to="/bookmarks" activeClassName="active">Bookmarks</NavLink></li>
-//           <li className="flex-grow"></li>
-//           <li><NavLink to="/user" activeClassName="active">User Menu</NavLink></li>
-//         </ul>
-
-//           {/* <FolderList folders={this.props.folders} /> */}
-//           {/* <button className="button button--link" onClick={this.props.startLogout}>Logout</button> */}
-//         </div>
-//       </div>
-//     );
-//   };
-// }
+export default connect(mapStateToProps,mapDispatchToProps)(Navigation);

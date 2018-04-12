@@ -1,0 +1,19 @@
+.login__wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.login__item + .login__item {
+  margin-top: 2rem;
+}
+.login__item--top {
+  color: $funky-red;
+}
+.login__item--bottom {
+  padding: 3rem 2rem;
+  border: 0.1rem solid $border-color;
+  border-radius: $border-radius;
+}
+
+.login__item--bottom button { margin-top: 2rem; }

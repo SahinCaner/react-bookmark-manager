@@ -19,9 +19,9 @@
   border: 0;
 }
 .form__input:focus {
-  border-color: lighten($funky-blue, 20%);
+  border-color: lighten($primary-color, 20%);
   outline: 0;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035), 0 0 8px lighten($funky-blue, 30%);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.035), 0 0 8px lighten($primary-color, 30%);
 }
 select.form__input {
   position: relative;
