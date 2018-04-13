@@ -38,7 +38,7 @@ export class Navigation extends React.Component {
         <div className="navigation__item navigation__item--header">
           <div className="navigation__logo">
             <Link to="/folders">ManageURLs</Link>
-            <div className="btn btn--link" onClick={this.props.startLogout}>Logout</div>
+            <div className="btn btn--link btn--mobile" onClick={this.props.startLogout}>LOGOUT</div>
           </div>
           <div
             className="navigation__mobile__menu"

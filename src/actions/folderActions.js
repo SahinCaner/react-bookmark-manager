@@ -22,11 +22,10 @@ export const startCreateFolder = (folderData = {}) => {
       title = "",
       desc = "",
       createdAt = 0,
-      updatedAt = 0,
-      iconURL = ""
+      updatedAt = 0
     } = folderData;
 
-    const folder = { title, desc, createdAt, updatedAt, iconURL };
+    const folder = { title, desc, createdAt, updatedAt };
 
     return database
       .ref(`users/${uid}/folders`)

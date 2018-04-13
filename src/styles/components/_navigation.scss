@@ -28,6 +28,16 @@
   transition: all 225ms cubic-bezier(0, 0, 0.2, 1);
   background-color: #fff;
 }
+.navigation__logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navigation__mobile__menu .btn {
+  margin-left: 1rem;
+}
+
 .navigation__logo a {
   color: $funky-red;
   text-decoration: none;
@@ -82,7 +92,7 @@ ul.nav__menu > li h2 {
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
 }
-ul.nav__menu > li h2  {
+ul.nav__menu > li h2 {
   font-family: "Lato", sans-serif;
   color: $color-1;
 }
@@ -172,7 +182,7 @@ ul.sub__nav__menu li {
     width: 100%;
   }
 
-  ul.sub__nav__menu{
+  ul.sub__nav__menu {
     display: block;
   }
 }
