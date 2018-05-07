@@ -10,6 +10,10 @@ ul.folder__list > li {
   margin-bottom: 5rem;
 }
 ul.folder__list > li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
 }
 ul.folder__list > li a:hover p {
